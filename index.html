@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href=" https://cdn-icons-png.flaticon.com/512/9832/9832848.png">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>smart-canteen preorder and waste reduction</title>
+    
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+  <header>
+    <div class="header">
+        <div class="headerbar">
+            <div class="account">
+                <ul>
+                    <a href="">
+                        <li>
+                            <i class="fa-solid fa-house-chimney"> </i>
+
+                        </li>
+                    </a>
+                    <a href="#">
+                    <li>
+                        <i class="fa-solid fa-magnifying-glass searchicon" id="searchicon1"></i>
+                    </li>
+                    </a>
+                    <div class="search" id="searchinput1">
+                        <input type="search">
+                        
+                        <i class="fa-solid fa-magnifying-glass srchicon"  >
+
+                        </i>
+                        
+                    </div>
+                    <a href="">
+                        <li>
+                            <i class=" fa-solid  fa-user" id="user-mb"></i>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+            <div class="nav">
+                
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Menu</a></li>
+   <li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+<li class="notification-wrapper">
+    <i class="fa-solid fa-bell  bellIcon" ></i>
+    <span id="notifCount" class="notif-badge">0</span>
+</li>
+<li>
+    <a href="#" onclick="showBill()">My Bill</a>
+</li>
+
+    
+<!-- Example in nav -->
+
+
+    <li><a href="#" onclick="logout()">Logout</a></li>
+
+  </ul>
+
+
+            </div>
+        </div>
+    <div class="logo">
+        <img src="https://media.istockphoto.com/id/866575922/vector/food-like-icon-fork-and-spoon-inside-circles-catering-concept.jpg?s=612x612&w=0&k=20&c=qiZLbwWrHDKkw6M1hJPxeGaPlCd2Xxrxs6WHvurLQCw=" alt=""> 
+    </div>
+    <div class="bar">
+        <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-xmark" id="hdcross"></i>
+        
+        </div>
+        <div class="nav">
+                
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Menu</a></li>
+    <li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+<li class="notification-wrapper">
+    <i class="fa-solid fa-bell  bellIcon" ></i>
+    <span id="notifCount" class="notif-badge">0</span>
+</li>
+
+<li>
+    <a href="#" onclick="showBill()">My Bill</a>
+</li>
+
+
+
+    <li>
+    <button id="logoutBtn" type="button" style="background:none;border:none;cursor:pointer;">
+        Logout
+    </button>
+</li>
+<li>
+<!-- Example in nav -->
+
+
+
+  </ul>
+
+
+            </div>
+        <div class="account">
+            <ul>
+                <a href="#">
+                    <li>
+                        <i class="fa-solid fa-house-chimney"></i></li>
+                            <a href="#">
+                                <li>
+                    
+                        <i class="fa-solid fa-magnifying-glass searchicon" id="searchicon2"> </i>
+                    </li>
+                </a>
+                <div class="search" id="searchinput2">
+                    <input type="search">
+                    <i class="fa-solid fa-magnifying-glass srchicon" >
+
+                    </i>
+                </div>
+                <a href="#">
+                    <li>
+                        <i class="fa-solid fa-user" id="user-lap"></i>
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+  </header>
+  
+  <div class="home" id="home">
+    <div class="main_slide">
+        <div>
+            <h1> Enjoy<span> Delicious Food</span> in your Healthy Life.</h1>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam delectus ea velit sequi, nihil adipisci illum officia dicta omnis dolores ex quod at voluptas minus, nam repudiandae rerum quia pariatur.</p>
+
+           <button class="red_btn" onclick="toggleMenu()">
+  Visit Now <i class="fa-solid fa-arrow-right-long"></i>
+</button>
+        </div>
+        <div>
+            <img src="  https://png.pngtree.com/png-vector/20250416/ourmid/pngtree-healthy-food-plate-with-fruits-and-vegetables-png-image_16010934.png" alt="">
+        </div>
+    </div>
+    <div class="main_slide2">
+    <div class="foodimg"><img src=" https://static.vecteezy.com/system/resources/thumbnails/051/689/626/small/floated-broccoli-tomatoes-and-olives-with-rice-falling-into-a-plate-isolate-on-transparency-background-png.png " alt="">
+    </div>
+    <div class="question"><div>
+     <h2> Why People Choose Us?</h2>
+    </div>
+    
+    <div> 
+        <div class="q-ans">
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3-konQ56q4Cpx5uR2Zz4OM4jhUyltas4ruw&s " alt="">
+            </div>
+            <div>
+                <h4> Choose Your Favourite</h4>
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam exercitationem alias vitae.</p>
+            </div>
+        </div>
+         <div class="q-ans">
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3-konQ56q4Cpx5uR2Zz4OM4jhUyltas4ruw&s " alt="">
+            
+            
+            </div>
+            <div>
+                <h4> Choose Your Favourite</h4>
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam exercitationem alias vitae.</p>
+            </div>
+        </div>
+         <div class="q-ans">
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3-konQ56q4Cpx5uR2Zz4OM4jhUyltas4ruw&s " alt="">
+            </div>
+            <div>
+                <h4> Choose Your Favourite</h4>
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam exercitationem alias vitae.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="main_slide3">
+    <div class="fav-head">
+        <h3> Our Popular Food Items</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga illo ut suscipit non. Suscipit perferendis ipsa provident sunt dolores neque laborum alias accusamus mollitia earum, eius maxime sed doloribus aspernatur?</p>
+    </div>
+    <div class="fav-food">
+        <div class="item">
+            <div>
+                <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThWNEbv24hQj0yeTOnzKCL67RSbTrkjWULIA&s" alt="">
+            
+            </div>
+            <h3>  Manchurian</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat maiores itaque placeat!</p>
+       <p class="fav-price">$2.90</p>
+        </div>
+        <div class="item">
+            <div>
+                <img src=" https://png.pngtree.com/png-vector/20250220/ourmid/pngtree-vada-pav-popular-indian-street-food-png-image_15532834.png" alt="">
+            
+            </div>
+            <h3>  Vada Pav</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat maiores itaque placeat!</p>
+       <p class="fav-price">$2.90</p>
+        </div>
+        <div class="item">
+            <div>
+                <img src="https://png.pngtree.com/png-clipart/20230612/ourmid/pngtree-sabudana-khichri-or-sago-png-image_7135273.png " alt="">
+            
+            
+            </div>
+            <h3>  Sabudana usal</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat maiores itaque placeat!</p>
+       <p class="fav-price">$2.90</p>
+        </div>
+        <div class="item">
+            <div>
+                <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyYVjLodv4LQHEC29myiLKRCHovXazBqt7fQ&s " alt="">
+             
+            
+            </div>
+            <h3>  Maggi</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat maiores itaque placeat!</p>
+       <p class="fav-price">$.90</p>
+        </div>
+         <div class="dsgn"></div>
+    </div>
+   
+</div>
+
+<div class="main_slide4">
+    <div class="chef-food">
+        <h2>Customer<span style="color:red;">Feedback</span>  </h2>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores possimus, non repudiandae maxime dignissimos perspiciatis. Voluptas,
+             animi eligendi minus aliquid asperiores veritatis consequatur recusandae. Commodi repudiandae deserunt explicabo aut fugiat itaque.
+              Blanditiis assumenda deserunt suscipit, atque quas non fugiat labore fuga quia pariatur laborum eligendi error quam ipsam voluptate sit.</p>
+<div class="chef-detail">
+    <div>
+        <img src=" https://media.istockphoto.com/id/866575922/vector/food-like-icon-fork-and-spoon-inside-circles-catering-concept.jpg?s=612x612&w=0&k=20&c=qiZLbwWrHDKkw6M1hJPxeGaPlCd2Xxrxs6WHvurLQCw=" alt="">
+
+    </div>
+    <div>
+        <h6>  Canteen </h6>
+        <p>Web developer</p>
+    </div>
+</div>
+<div class="chef-vic">
+    <div>
+        <i class="fa-solid fa-hand-peace"></i>
+        <h4> 68</h4>
+        <p> Lorem ipsum dolor sit amet.</p>
+
+    </div>
+    <div>
+        <i class="fa-solid fa-trophy"></i>
+        <h4>956</h4>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+    </div>
+</div>
+    </div>
+    <!-- USER REVIEWS FEED -->
+<div class="reviews-section">
+  <h3>What Our Customers Say</h3>
+
+  <!-- Feed of reviews -->
+  <div class="reviews-feed" id="reviewsFeed">
+    <!-- Reviews appear here dynamically -->
+  </div>
+
+  <!-- Add a new review form -->
+  <div class="add-review">
+    <input type="text" id="userName" placeholder="Your Name" />
+    <textarea id="userReview" placeholder="Write your review..."></textarea>
+    <select id="userRating">
+      <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
+      <option value="4">⭐️⭐️⭐️⭐️☆</option>
+      <option value="3">⭐️⭐️⭐️☆☆</option>
+      <option value="2">⭐️⭐️☆☆☆</option>
+      <option value="1">⭐️☆☆☆☆</option>
+    </select>
+    <button onclick="submitReview()">Submit</button>
+  </div>
+</div>
+
+    <div class="chef">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/046/822/681/small/a-chef-in-uniform-holding-a-tray-of-food-isolated-on-a-transparent-background-png.png" alt="">
+    </div>
+</div>
+
+<div class="letter">
+    <div class="letter-head">
+        <h2> Subscribe <span > Newsletter</span> </h2>
+    </div>
+
+    <div class="letter-input">
+        <div>
+            <input type="@mail" placeholder="Example.com">
+        </div>
+
+        <button class="red_btn"> Subscribe</button>
+    </div>
+</div>
+
+  </div>
+
+    <div class="menu" id="menu">
+        <div class="search-box">
+  <input 
+    type="text" 
+    id="searchInput" 
+    placeholder="Search food item..."
+    onkeyup="searchFood()"
+  >
+  <button onclick="searchFood()" class="search-btn">Search</button>
+</div>
+
+    <div class="food-items" >
+       
+            {% for item in menu_items %}
+    <div class="item">
+        <div>
+            <img src="{{ item[3] }}" alt="{{ item[1] }}">
+        </div>
+
+        <h3>{{ item[1] }}</h3>
+        <p>Fresh & tasty</p>
+
+       {% if item[4] == 1 and item[5] > 0 %}
+    <button
+        class="white_btn pre-order-btn"
+        data-name="{{ item[1] }}"
+        data-price="{{ item[2] }}">
+        Pre-Order
+    </button>
+{% else %}
+    <button class="white_btn" disabled style="opacity:0.5; cursor:not-allowed;">
+        Out of Stock
+    </button>
+{% endif %}
+
+    </div>
+{% endfor %}
+
+            
+        </div>
+    </div>
+   
+    
+  <div class="bill-container" id="mybill" style="display:none;">
+
+    <h3>My Bill - {{ username }}</h3>
+    <table class="bill-table">
+        <thead>
+            <tr>
+                <th>Food Item</th>
+                <th>Quantity</th>
+                <th>Price (₹)</th>
+                <th>Total (₹)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in bill_items %}
+            <tr>
+                <td>{{ item[0] }}</td>
+                <td>{{ item[1] }}</td>
+                <td>₹{{ item[2] }}</td>
+                <td>₹{{ item[3] }}</td>
+            </tr>
+            {% endfor %}
+            <tr class="grand-total-row">
+                <td colspan="3">Grand Total</td>
+                <td>₹{{ grand_total }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="{{ url_for('home') }}" class="back-btn">⬅ Back to Home</a>
+</div>
+
+  
+<section class="about" id="about">
+  <div class="about-wrapper">
+
+    <div class="about-text">
+      <h2>About <span>Us</span></h2>
+
+      <p>
+        We are a <b>Smart Canteen System</b> focused on reducing food waste
+        through pre-ordering, smart planning, and efficient service.
+        Our mission is to deliver fresh food while saving time, money,
+        and resources.
+      </p>
+
+      <div class="about-stats">
+        <div>
+          <h3>10+</h3>
+          <p>Food Partners</p>
+        </div>
+
+        <div>
+          <h3>5K+</h3>
+          <p>Happy Users</p>
+        </div>
+
+        <div>
+          <h3>30%</h3>
+          <p>Waste Reduced</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-image">
+      <img src="https://media.istockphoto.com/id/1218975303/photo/communal-area-of-busy-college-campus-with-students-working-at-tables.jpg?s=612x612&w=0&k=20&c=-rWYkMzPsdmp3JNT7fqU2h8AKrytKmBNlQKB68x-S4o=" alt="About Us">
+    </div>
+
+  </div>
+</section>
+<!-- CONTACT US -->
+
+     <section id="contact" class="contact">
+
+  <h2 class="contact-title">Contact Us</h2>
+
+  <div class="contact-container">
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <div class="info-box">
+        <i class="fas fa-map-marker-alt"></i>
+        <div>
+          <h3>Address</h3>
+          <p>Pune, Maharashtra, India</p>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <i class="fas fa-phone-alt"></i>
+        <div>
+          <h3>Phone</h3>
+          <p>+91 98765 43210</p>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <i class="fas fa-envelope"></i>
+        <div>
+          <h3>Email</h3>
+          <p>contact@example.com</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+ <!-- Footer -->
+<div class="footer">
+    <div class="footerText">
+        <h2>Tasty Food</h2>
+        <p>Customer Service</p>
+        <p>Privacy Policy</p>
+        <p>Terms & Conditions</p>
+        <p>Shipping Policy</p>
+    </div>
+    <div class="footerText">
+        <h2>About Us</h2>
+        <p>Our Story</p>
+        <p>Sustainability</p>
+        <p>Careers</p>
+        <p>Press</p>
+    </div>
+    <div class="footerText">
+        <h2>Contact</h2>
+        <p><i class="fas fa-phone"></i> +1 (910) 123-4567</p>
+        <p><i class="fas fa-envelope"></i> info@trends.com</p>
+        <p><i class="fas fa-comments"></i> Live Chat</p>
+        <p><i class="fas fa-question-circle"></i> FAQ</p>
+    </div>
+    
+    <div class="footerText">
+        <h2>Follow Us</h2>
+        <p><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></p>
+        <p><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></p>
+        <p><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></p>
+        <p><a href="https://pinterest.com" target="_blank"><i class="fab fa-pinterest"></i> Pinterest</a></p>
+    </div>
+</div>
+  <!-- ORDER POPUP -->
+<!-- LIVE ORDERS SECTION -->
+
+<div class="login-container">
+    <h2>Login / Signup</h2>
+
+    <!-- TABS -->
+    <div class="login-tabs">
+        <button id="userTab" class="active">User Login</button>
+        <button id="adminTab">Admin Login</button>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+
+    <!-- SIGNUP FORM -->
+    <form id="signupForm" style="display:none;">
+        <input type="text" id="newUsername" placeholder="Username" required>
+        <input type="password" id="newPassword" placeholder="Password" required>
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <!-- SIGNUP LINK -->
+    <div class="signup-link">
+        Don't have an account? <a href="#" id="signupLink">Sign Up</a>
+    </div>
+</div>
+
+  <div class="order-popup" id="orderPopup">
+  <div class="order-card">
+    <span class="close-btn" onclick="closeOrder()">×</span>
+
+    <h2>Order Details</h2>
+
+    <p><strong>Item:</strong> <span id="foodName">Vada Pav</span></p>
+    <p><strong>Price:</strong> ₹<span id="foodPrice">25</span></p>
+
+    <label>Name</label>
+<input type="text" id="usernameInput" value="{{ session.get('user', '') }}" readonly>
+
+<label>Quantity</label>
+<input 
+  type="number" 
+  id="quantity" 
+  min="1" 
+  value="1" 
+  placeholder="Enter quantity"
+  >
+<p><strong>Total:</strong> ₹<span id="totalPrice">25</span></p>
+
+    
+    <label>Date</label>
+    <input type="date" id="orderDate">
+
+    <label>Time</label>
+    <input type="time" id="orderTime">
+
+    <label>Payment</label>
+    <select id="paymentMethod" onchange="toggleUPI()">
+      <option value="cash">Cash</option>
+      <option value="upi">UPI</option>
+      <option value="card">Card</option>
+    </select>
+
+    <!-- UPI PIN -->
+    <div class="upi-pin" id="upiPin">
+      <label>UPI PIN</label>
+      <input type="password" id="upiPinInput" placeholder="Enter UPI PIN" maxlength="4" pattern="\d{4}" title="Enter 4-digit UPI PIN">
+
+    </div>
+    <!-- CARD DETAILS -->
+<div class="card-details" id="cardDetails" style="display:none;">
+
+  <label>Card Number</label>
+  <input type="text" id="cardNumber" maxlength="16" placeholder="Enter 16-digit card number">
+
+  <label>Expiry Date</label>
+  <input type="month" id="expiryDate">
+
+  <label>CVV</label>
+  <input type="password" id="cvv" maxlength="3" placeholder="Enter 3-digit CVV">
+
+</div>
+
+
+    <button id="confirmOrderBtn" class="order-btn" type="button">Confirm Order</button>
+        <button type="button" onclick="closeOrder()">Cancel</button>
+
+    <p class="success-msg" id="successMsg">Order placed successfully ✅</p>
+  </div>
+</div>
+
+<audio id="bellSound" preload="auto" style="display:none;">
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_4f0f3f3e3c.mp3?filename=notification-2-269292.mp3" type="audio/mpeg">
+</audio>
+
+
+<script src="{{ url_for('static', filename='app.js') }}">
+
+    
+</script>
+
+
+        
+    
+</body>
+</html>
