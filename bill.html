@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bill - Smart Canteen</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .bill-container {
+            width: 85%;
+            max-width: 900px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .bill-title {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th {
+            background-color: #2c3e50;
+            color: white;
+            padding: 12px;
+        }
+
+        table td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table tr:hover {
+            background-color: #f2f2f2;
+        }
+
+        .total-row {
+            background-color: #ecf0f1;
+            font-weight: bold;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 8px 15px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .back-btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* ===== LIVE TRACKER ===== */
+
+    </style>
+</head>
+
+<body>
+
+<div class="bill-container">
+
+    <h2 class="bill-title">Billing Details - {{ username }}</h2>
+
+    <table>
+        <tr>
+            <th>Food Item</th>
+            <th>Quantity</th>
+            <th>Price (₹)</th>
+            <th>Total (₹)</th>
+        </tr>
+
+        {% for item in bill_items %}
+        <tr>
+            <td>{{ item[0] }}</td>
+            <td>{{ item[1] }}</td>
+            <td>₹{{ item[2] }}</td>
+            <td>₹{{ item[3] }}</td>
+        </tr>
+        {% endfor %}
+
+        <tr class="total-row">
+            <td colspan="3">Grand Total</td>
+            <td>₹{{ grand_total }}</td>
+        </tr>
+
+    </table>
+    
+        
+
+    <div style="text-align:center;">
+        
+       <a href="{% if session.get('role') == 'admin' %}/admin?tab=users{% else %}/{% endif %}" class="back-btn">⬅ Back</a>
+
+
+    </div>
+
+</div>
+
+
+
+</body>
+</html>
