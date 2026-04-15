@@ -1,0 +1,30 @@
+{% for item in menu_items %}
+<div class="food">
+    <h3>{{ item[1] }}</h3>
+
+    <p>Price: ₹<span class="price">{{ item[2] }}</span></p>
+
+    {% if item[4] == 1 %}
+
+        <label>Quantity</label>
+        <input type="number" value="1" min="1"
+               oninput="updateTotal(this)">
+
+        <p>Total: ₹<span class="total">{{ item[2] }}</span></p>
+
+        <button>Confirm Order</button>
+
+    {% else %}
+        <p style="color:red;">Out of Stock</p>
+    {% endif %}
+</div>
+{% endfor %}
+<script>
+function updateTotal(input) {
+    let foodDiv = input.closest(".food");
+    let price = foodDiv.querySelector(".price").innerText;
+    let totalSpan = foodDiv.querySelector(".total");
+
+    totalSpan.innerText = price * input.value;
+}
+</script>
