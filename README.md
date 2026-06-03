@@ -1,4 +1,4 @@
-# Project Title
+# Project Title -
 Smart Canteen Pre-Order and Food Waste Management System
 
 ## 📌 Description
