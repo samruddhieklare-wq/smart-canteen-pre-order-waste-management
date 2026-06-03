@@ -12,7 +12,7 @@ This project is a web-based system that allows users to pre-order food and helps
 - Admin panel
 - Order tracking
 
-## 🛠️ Technologies Used
+## 🛠️ (Technologies Used)
 - HTML
 - CSS
 - JavaScript
